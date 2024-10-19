@@ -1,0 +1,35 @@
+{
+	"schemaVersion": 1,
+	"id": "blueprint",
+	"version": "${version}",
+	"name": "Blueprint",
+	"description": "",
+	"authors": [
+		"Rynsh"
+	],
+	"contact": {
+	},
+	"license": "ARR",
+	"icon": "assets/blueprint/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.ibex.blueprint.Blueprint"
+		],
+		"client": [
+			"com.ibex.blueprint.client.BlueprintClient"
+		]
+	},
+	"mixins": [
+		"blueprint.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.16.7",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
