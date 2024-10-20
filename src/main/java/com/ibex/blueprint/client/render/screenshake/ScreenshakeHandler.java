@@ -23,8 +23,10 @@ public class ScreenshakeHandler {
     public static void clientTick(Camera camera, Random random) {
         if (!SCREENSHAKES.isEmpty()) {
             double sum = SCREENSHAKES.stream().mapToDouble(i1 -> i1.update(camera, random)).sum();
-            intensity = (float) Math.pow(sum, 3);
-            SCREENSHAKES.removeIf(i -> i.progress >= i.duration);
+            intensity = (float) Math.sqrt(sum);
+            SCREENSHAKES.removeIf(Screenshake::isComplete);
+        } else {
+            intensity = 0;
         }
     }
 

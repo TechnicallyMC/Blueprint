@@ -14,7 +14,7 @@ public class BlueprintClientLibrary {
             return;
         }
 
-        ClientTickEvents.START_CLIENT_TICK.register(minecraftClient -> {
+        ClientTickEvents.END_CLIENT_TICK.register(minecraftClient -> {
             if (minecraftClient.world != null) {
                 Camera camera = minecraftClient.gameRenderer.getCamera();
                 ScreenshakeHandler.clientTick(camera, RANDOM);

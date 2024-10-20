@@ -18,10 +18,7 @@ public class DebugItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack itemStack = user.getActiveItem();
-
-        ScreenshakeHandler.addScreenshake(new Screenshake(20).setIntensity(5.0f));
-
-        return TypedActionResult.success(itemStack.copy());
+        ScreenshakeHandler.addScreenshake(new Screenshake(50).setIntensity(50.0f));
+        return TypedActionResult.fail(this.getDefaultStack());
     }
 }
